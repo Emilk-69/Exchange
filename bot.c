@@ -9,12 +9,14 @@ int	main()
 	printf("Ok %s , How old are you?\n", priv);
 	scanf("%d", &old);
 	printf("Woow, you look young, i thought you %d\n", old - 2);
-	printf("So, do you have any kids? write  y - 1, n - 0\n");
+	printf("So, do you have any kids? write  yes - 1, no - 0\n");
 	int kid1;
 	int kid2;
-	char kid3[5];
+	int kid3;
+	int kid4;
+	char reason[100];
 	scanf("%d", &kid1);
-	if (old > 25)
+	if (old >= 25)
 	{	
 		if (kid1 == 1)
 		{
@@ -24,23 +26,39 @@ int	main()
 			{
 				printf("Wow, you are super mom\n");
 			}
+			else if(kid2 == 0)
+			{
+				printf("Ooops, you confuse me :(");
+			}
 			else
 			{
-				printf("It's cool");
+				printf("It's cool\n");
 			}
 		}
 		else if(kid1 == 0)
 		{
-			printf("Are you planning to start? write y/n ");
-			scanf("%s", kid3);
+			printf("Are you planning to start? write yes - 1, no - 0\n");
+			scanf("%d", &kid3);
+			if (kid3 == 1)
+			{
+				printf("Good, how many you want?\n");
+				scanf("%d", &kid4);
+				printf("It's cool\n");
+			}
+			else if (kid3 == 0)
+			{
+				printf("Why? :(\n");
+				scanf("%s", reason);
+			}
 			
 		}
 	}
 	int elsekid;
 	int elsekidold;
+	char reason1[100];
 	if (old < 25)
 	{
-		printf("Do you want to children? write y - 1, n - 0\n");
+		printf("Do you want to children? write yes - 1, no - 0\n");
 		scanf("%d", &elsekid);
 		if (elsekid == 1)
 		{
@@ -51,6 +69,7 @@ int	main()
 		else if(elsekid == 0)
 		{
 			printf("Wow, why?\n");
+			scanf("%s", reason1);
 		}
 
 	}

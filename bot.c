@@ -2,19 +2,24 @@
 
 int	main()
 {
-	char priv[20];
+	char	priv[20];
 	printf("Hi, i'm Johnbot, what's your name\n");
 	scanf("%s",priv);
-	int old;
+	int	old;
 	printf("Ok %s , How old are you?\n", priv);
 	scanf("%d", &old);
-	printf("Woow, you look young, i thought you %d\n", old - 2);
+	if (old <= 3)
+	{
+		printf("Woow, you are, so little :3\n");
+		return (0);
+	}
+	printf("Woow, you look young, i thought you %d\n", old - 3);
 	printf("So, do you have any kids? write  yes - 1, no - 0\n");
-	int kid1;
-	int kid2;
-	int kid3;
-	int kid4;
-	char reason[100];
+	int	kid1;
+	int	kid2;
+	int	kid3;
+	int	kid4;
+	char	reason[100];
 	scanf("%d", &kid1);
 	if (old >= 25)
 	{	
@@ -35,7 +40,7 @@ int	main()
 				printf("It's cool\n");
 			}
 		}
-		else if(kid1 == 0)
+		else if (kid1 == 0)
 		{
 			printf("Are you planning to start? write yes - 1, no - 0\n");
 			scanf("%d", &kid3);
@@ -49,13 +54,12 @@ int	main()
 			{
 				printf("Why? :(\n");
 				scanf("%s", reason);
-			}
-			
+			}	
 		}
 	}
-	int elsekid;
-	int elsekidold;
-	char reason1[100];
+	int	elsekid;
+	int	elsekidold;
+	char	reason1[100];
 	if (old < 25)
 	{
 		printf("Do you want to children? write yes - 1, no - 0\n");
@@ -71,6 +75,5 @@ int	main()
 			printf("Wow, why?\n");
 			scanf("%s", reason1);
 		}
-
 	}
 }
